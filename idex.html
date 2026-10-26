@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Member Registration Form</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #eaf3ff;
+        margin: 0;
+        padding: 30px 15px;
+    }
+
+    .container {
+        max-width: 450px;
+        margin: auto;
+        background-color: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    h2 {
+        text-align: center;
+        color: #0645ad;
+    }
+
+    p {
+        text-align: center;
+        color: #555;
+    }
+
+    label {
+        display: block;
+        margin-top: 15px;
+        font-weight: bold;
+    }
+
+    input, select {
+        width: 100%;
+        padding: 11px;
+        margin-top: 6px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 15px;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        margin-top: 22px;
+        background-color: #0645ad;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #032f7a;
+    }
+
+    #message {
+        text-align: center;
+        margin-top: 15px;
+        color: green;
+        font-weight: bold;
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+<div class="container">
+
+```
+<h2>Member Registration</h2>
+
+<p>Please fill in your details below.</p>
+
+<action="https://formsubmit.co/oduoreugene464@gmail.com"
+method="POST">
+
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name"
+           placeholder="Enter your full name" required>
+
+    <label for="gender">Gender</label>
+    <select id="gender" name="gender" required>
+        <option value="">Select gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+        <option value="Prefer not to say">Prefer not to say</option>
+    </select>
+
+    <label for="age">Age</label>
+    <input type="number" id="age" name="age"
+           placeholder="Enter your age"
+           min="1" max="120" required>
+
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="phone"
+           placeholder="e.g. 0712345678"
+           pattern="[0-9+ ]{10,15}"
+           title="Enter a phone number using 10 to 15 digits, spaces, or a leading +"
+           required>
+
+    <label for="county">County</label>
+    <select id="county" name="county" required>
+        <option value="">Select your county</option>
+        <option>Mombasa</option>
+        <option>Kwale</option>
+        <option>Kilifi</option>
+        <option>Tana River</option>
+        <option>Lamu</option>
+        <option>Taita-Taveta</option>
+        <option>Garissa</option>
+        <option>Wajir</option>
+        <option>Mandera</option>
+        <option>Marsabit</option>
+        <option>Isiolo</option>
+        <option>Meru</option>
+        <option>Tharaka-Nithi</option>
+        <option>Embu</option>
+        <option>Kitui</option>
+        <option>Machakos</option>
+        <option>Makueni</option>
+        <option>Nyandarua</option>
+        <option>Nyeri</option>
+        <option>Kirinyaga</option>
+        <option>Murang'a</option>
+        <option>Kiambu</option>
+        <option>Turkana</option>
+        <option>West Pokot</option>
+        <option>Samburu</option>
+        <option>Trans Nzoia</option>
+        <option>Uasin Gishu</option>
+        <option>Elgeyo-Marakwet</option>
+        <option>Nandi</option>
+        <option>Baringo</option>
+        <option>Laikipia</option>
+        <option>Nakuru</option>
+        <option>Narok</option>
+        <option>Kajiado</option>
+        <option>Kericho</option>
+        <option>Bomet</option>
+        <option>Kakamega</option>
+        <option>Vihiga</option>
+        <option>Bungoma</option>
+        <option>Busia</option>
+        <option>Siaya</option>
+        <option>Kisumu</option>
+        <option>Homa Bay</option>
+        <option>Migori</option>
+        <option>Kisii</option>
+        <option>Nyamira</option>
+        <option>Nairobi City</option>
+    </select>
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email"
+           placeholder="Enter your email address" required>
+
+    <button type="submit">Submit Details</button>
+
+</form>
+
+<div id="message" role="status"></div>
+```
+
+</div>
+
+<script>
+    document.getElementById("memberForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const member = {
+            name: document.getElementById("name").value.trim(),
+            gender: document.getElementById("gender").value,
+            age: document.getElementById("age").value,
+            phone: document.getElementById("phone").value.trim(),
+            county: document.getElementById("county").value,
+            email: document.getElementById("email").value.trim()
+        };
+
+        document.getElementById("message").textContent =
+            "Thank you, " + member.name +
+            "! Your form has been submitted in this demo.";
+        
+        console.log("Member details:", member);
+    });
+</script>
+
+</body>
+</html>
